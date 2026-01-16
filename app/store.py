@@ -1,0 +1,2 @@
+
+DOCUMENT_STORE = {}

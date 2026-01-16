@@ -3,6 +3,8 @@ from fastapi import FastAPI, UploadFile, File
 from pydantic import BaseModel
 from app.ingest import ingest_pdf
 from app.ask import ask_question
+from app.audit import audit_contract
+
 
 app = FastAPI(title="Contract Intelligence API")
 
@@ -33,3 +35,11 @@ class ExtractRequest(BaseModel):
 @app.post("/extract")
 def extract(req: ExtractRequest):
     return extract_contract_fields(req.document_id)
+
+class AuditRequest(BaseModel):
+    document_id: str
+
+@app.post("/audit")
+def audit(req: AuditRequest):
+    return audit_contract(req.document_id)
+
