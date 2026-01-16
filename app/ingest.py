@@ -1,11 +1,10 @@
 import uuid
 import pdfplumber
 from fastapi import UploadFile
-
+from app.store import DOCUMENT_STORE
 from app.llm import embed_text
 from app.vector_store import VECTOR_STORE
 
-DOCUMENT_STORE = {}
 
 def chunk_text(text: str, size: int = 500):
     for i in range(0, len(text), size):

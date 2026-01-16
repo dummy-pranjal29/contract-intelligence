@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pdfplumber
+python-multipart
+faiss-cpu
+pydantic
+python-dotenv
+sse-starlette

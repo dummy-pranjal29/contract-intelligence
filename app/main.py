@@ -6,6 +6,7 @@ from app.ask import ask_question
 from app.audit import audit_contract
 
 
+
 app = FastAPI(title="Contract Intelligence API")
 
 class AskRequest(BaseModel):
